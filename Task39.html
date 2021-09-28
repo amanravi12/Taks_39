@@ -1,0 +1,41 @@
+<html>
+<head>
+<style>
+body{
+background-color:#34e5eb;
+height:100%;
+width:100%;
+}
+.frt{
+height:300px;
+width:100%;
+background-image:url("docker.png");
+}
+#sec{
+padding-top:20px;
+}
+#btn{
+margin-top:10px;
+background-color:red;
+height:30px;
+width:100px;
+}
+
+</style>
+
+<script>
+function lw(){
+var a =document.getElementById('in').value;
+var xhr = new XMLHttpRequest();
+xhr.open("GET","http://192.168.43.11/cgi-bin/task7.py?x="+a,true);
+xhr.send();
+//output from url
+var op = xhr.responseText;
+//alert(op);
+
+
+//xhr.onload = function(){
+//var op = xhr.responseText;
+document.getElementById("d1").innerHTML = op;
+//}
+}
